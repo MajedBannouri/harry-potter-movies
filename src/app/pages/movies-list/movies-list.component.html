@@ -1,3 +1,7 @@
-<div class="container">
-  <app-movie-item *ngFor="let movie of movies" [movie]="movie"></app-movie-item>
+<div class="container mt-1">
+  <app-movie-filter (filterChange)="onFilterChange($event)"></app-movie-filter>
+  <app-movie-item
+    *ngFor="let movie of filtredMovies"
+    [movie]="movie"
+  ></app-movie-item>
 </div>
