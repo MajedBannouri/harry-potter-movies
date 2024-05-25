@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <h1 class="col-lg-5">{{ movieDetails.title }}</h1>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-1">
+      <button (click)="backToMoviesList()">Back</button>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3">
+      <img src="{{ movieDetails.poster }}" alt="" />
+    </div>
+    <div class="col-lg-5 mt-1">
+      <div class="row">
+        <strong> Summary : &nbsp; </strong> {{ movieDetails.summary }}
+      </div>
+      <div class="row mt-2">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-2"><strong> Details </strong></div>
+      </div>
+      <hr />
+      <div class="row">
+        <strong> Box Office : &nbsp;</strong>
+        {{ movieDetails.box_office | budget }}
+      </div>
+      <div class="row">
+        <strong>Producers : &nbsp;</strong> {{ movieDetails.producers }}
+      </div>
+      <div class="row">
+        <strong>Cinematographers : &nbsp;</strong>
+        {{ movieDetails.cinematographers }}
+      </div>
+      <div class="row">
+        <strong> Budget : &nbsp;</strong> {{ movieDetails.budget | budget }}
+      </div>
+      <div class="row">
+        <strong> Duration : </strong> {{ movieDetails.duration | duration }}
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

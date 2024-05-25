@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie, MovieFilter } from '../models';
+import { Movie, MovieDetails, MovieFilter } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +25,9 @@ export class MoviesService {
         : true;
       return matchesTitles && matchesReleaseYear;
     });
+  }
+
+  getMovieDetailsById(movieId: string): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(`movies/${movieId}`);
   }
 }
