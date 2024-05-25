@@ -1,1 +1,4 @@
-export interface MovieFilter  {title:string, releaseYear:number}
+export interface MovieFilter {
+  title: string;
+  releaseYear: number;
+}

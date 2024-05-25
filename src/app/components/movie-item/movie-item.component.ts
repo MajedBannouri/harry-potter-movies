@@ -17,7 +17,7 @@ export class MovieItemComponent {
 
   constructor(private router: Router) {}
 
-  navigateToMovieDetails(movieId: string) {
+  navigateToMovieDetails(movieId: string): void {
     this.router.navigate(['/movies', movieId]);
   }
 }

@@ -20,7 +20,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
 
   constructor(private moviesService: MoviesService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getAllMovies();
   }
   getAllMovies(): void {
@@ -31,14 +31,14 @@ export class MoviesListComponent implements OnInit, OnDestroy {
       })
     );
   }
-  onFilterChange(movieFilter: MovieFilter) {
+  onFilterChange(movieFilter: MovieFilter): void {
     this.filtredMovies = this.moviesService.filterMovies(
       this.movies,
       movieFilter
     );
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }

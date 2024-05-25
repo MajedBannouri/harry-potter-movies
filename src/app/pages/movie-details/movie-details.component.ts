@@ -25,12 +25,12 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const movieId: string = this.route.snapshot.params['id'];
+    const movieId: string = this.route.snapshot.params['movieId'];
 
     this.getMovieDetails(movieId);
   }
 
-  getMovieDetails(movieId: string) {
+  getMovieDetails(movieId: string): void {
     this.subscription.add(
       this.moviesService.getMovieDetailsById(movieId).subscribe((data) => {
         this.movieDetails = data;
@@ -38,10 +38,10 @@ export class MovieDetailsComponent implements OnInit {
     );
   }
 
-  backToMoviesList() {
+  backToMoviesList(): void {
     this.router.navigate(['/movies']);
   }
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }
